@@ -1,0 +1,21 @@
+2. How might the I2C API be improved?
+
+- I would clarify the adress if it is a 7 bit or 8 bit
+
+- will improve the i2c status, i will add more functions for better logging
+    in the i2c.h file:
+
+                typedef enum {
+                STATUS_OK,
+                STATUS_ERROR
+                I2C_ERR_NACK,
+                I2C_ERR_TIMEOUT,
+                I2C_ERR_BUSY,
+             } status_t;
+
+- use size_t for lengths not uint16_t
+        status_t i2c_read(uint8_t bus_address,uint8_t register_address, size_t length, uint8_t *buffer);
+
+- 
+
+
